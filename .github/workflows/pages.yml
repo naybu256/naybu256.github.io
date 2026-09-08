@@ -1,4 +1,4 @@
-name: Publish BLACKCURRENT
+name: Publish FEEDRAID
 on:
   push:
     branches: [main]
@@ -7,7 +7,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: blackcurrent-production
+  group: feedraid-production
   cancel-in-progress: false
 jobs:
   publish:

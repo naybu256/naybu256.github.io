@@ -1,7 +1,9 @@
-# BLACKCURRENT — published website
+# FEEDRAID
 
-This repository contains only the public, pre-rendered website and the GitHub Pages publishing workflow. Editorial source is maintained in a separate private repository.
+Public rendered website: https://naybu256.github.io/en/
 
-Production changes are triggered by pushing validated website files to `main`. No manual production deployment is used.
+English AGD editorial publication. Source code is maintained separately in a private repository. Only validated rendered pages and public media belong here.
 
-Original editorial illustrations and bilingual content © BLACKCURRENT 2026. Framework/vendor bundles retain their respective licenses.
+Photo credits, original source links and reuse licenses appear on their respective article pages, accessible through the [article archive](https://naybu256.github.io/en/library/). Original AI-generated artwork is labeled separately.
+
+Production is published exclusively by the GitHub Pages workflow triggered by a push to main. SOURCE_VERSION records the private source revision used for this build.

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://naybu256.github.io/schemas/article.schema.json",
-  "title": "BLACKCURRENT Article v1",
+  "title": "FEEDRAID Article v1",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -16,7 +16,6 @@
     "evidence",
     "sources",
     "related",
-    "fr",
     "en",
     "publishedAt",
     "updatedAt",
@@ -101,128 +100,6 @@
         "sandbox",
         "native"
       ]
-    },
-    "fr": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "title",
-        "dek",
-        "point",
-        "body",
-        "action",
-        "trap",
-        "quote",
-        "stories"
-      ],
-      "properties": {
-        "title": {
-          "type": "string",
-          "minLength": 12,
-          "maxLength": 130
-        },
-        "dek": {
-          "type": "string",
-          "minLength": 30,
-          "maxLength": 350
-        },
-        "point": {
-          "type": "string",
-          "minLength": 50,
-          "maxLength": 1000
-        },
-        "body": {
-          "type": "array",
-          "minItems": 1,
-          "maxItems": 30,
-          "items": {
-            "type": "string",
-            "minLength": 180,
-            "maxLength": 8000
-          }
-        },
-        "action": {
-          "type": "array",
-          "minItems": 2,
-          "maxItems": 8,
-          "items": {
-            "type": "string",
-            "minLength": 15,
-            "maxLength": 350
-          }
-        },
-        "trap": {
-          "type": "string",
-          "minLength": 35,
-          "maxLength": 700
-        },
-        "quote": {
-          "type": "string",
-          "minLength": 10,
-          "maxLength": 260
-        },
-        "stories": {
-          "type": "array",
-          "minItems": 2,
-          "maxItems": 6,
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "required": [
-              "id",
-              "title",
-              "slides"
-            ],
-            "properties": {
-              "id": {
-                "type": "string",
-                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
-              },
-              "title": {
-                "type": "string",
-                "minLength": 5,
-                "maxLength": 160
-              },
-              "slides": {
-                "type": "array",
-                "minItems": 2,
-                "maxItems": 8,
-                "items": {
-                  "type": "object",
-                  "additionalProperties": false,
-                  "required": [
-                    "label",
-                    "title",
-                    "text",
-                    "media"
-                  ],
-                  "properties": {
-                    "label": {
-                      "type": "string",
-                      "minLength": 1,
-                      "maxLength": 90
-                    },
-                    "title": {
-                      "type": "string",
-                      "minLength": 4,
-                      "maxLength": 260
-                    },
-                    "text": {
-                      "type": "string",
-                      "minLength": 20,
-                      "maxLength": 1500
-                    },
-                    "media": {
-                      "type": "string",
-                      "pattern": "^/images/[a-zA-Z0-9._/-]+\\.(jpg|jpeg|png|webp|avif)$"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
     },
     "en": {
       "type": "object",
@@ -355,7 +232,7 @@
       "format": "date-time"
     },
     "author": {
-      "const": "blackcurrent-editorial"
+      "const": "feedraid-editorial"
     },
     "video": {
       "type": "object",
@@ -379,15 +256,9 @@
           "type": "object",
           "additionalProperties": false,
           "required": [
-            "fr",
             "en"
           ],
           "properties": {
-            "fr": {
-              "type": "string",
-              "minLength": 10,
-              "maxLength": 300
-            },
             "en": {
               "type": "string",
               "minLength": 10,
@@ -399,14 +270,9 @@
           "type": "object",
           "additionalProperties": false,
           "required": [
-            "fr",
             "en"
           ],
           "properties": {
-            "fr": {
-              "type": "string",
-              "pattern": "^/video/.*\\.vtt$"
-            },
             "en": {
               "type": "string",
               "pattern": "^/video/.*\\.vtt$"
@@ -419,14 +285,24 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
+        "kind",
         "src",
         "width",
         "height",
         "alt",
         "credit",
-        "provenance"
+        "provenance",
+        "source",
+        "license",
+        "licenseUrl"
       ],
       "properties": {
+        "kind": {
+          "enum": [
+            "photograph",
+            "illustration"
+          ]
+        },
         "src": {
           "type": "string",
           "pattern": "^/images/"
@@ -443,15 +319,9 @@
           "type": "object",
           "additionalProperties": false,
           "required": [
-            "fr",
             "en"
           ],
           "properties": {
-            "fr": {
-              "type": "string",
-              "minLength": 10,
-              "maxLength": 300
-            },
             "en": {
               "type": "string",
               "minLength": 10,
@@ -468,6 +338,19 @@
           "type": "string",
           "minLength": 20,
           "maxLength": 1000
+        },
+        "source": {
+          "type": "string",
+          "pattern": "^https://"
+        },
+        "license": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 100
+        },
+        "licenseUrl": {
+          "type": "string",
+          "pattern": "^https://"
         }
       }
     }

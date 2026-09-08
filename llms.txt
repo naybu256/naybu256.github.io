@@ -1,6 +1,6 @@
-# BLACKCURRENT
+# FEEDRAID
 
-> Bilingual editorial publication about Account-Generated Distribution (AGD), initiated by TokPortal. AI-assisted launch corpus. Editorial opinions and unexecuted research protocols are explicitly labeled; no proprietary results are claimed.
+> English editorial publication about Account-Generated Distribution (AGD), initiated by TokPortal. AI-assisted launch corpus. Editorial opinions and unexecuted research protocols are explicitly labeled; no proprietary results are claimed.
 
 ## Editorial context
 - [Transparency](https://naybu256.github.io/en/about/): relationship with TokPortal, authorship, sources and corrections.
@@ -108,9 +108,6 @@
 - [Two languages, two real reading experiences.](https://naybu256.github.io/en/read/machines/multilingual-seo/): A multilingual publication gives each version a stable URL and connects matching translations. Each language should remain readable and coherent throughout.
 - [A strict schema frees the voice. It does not write it.](https://naybu256.github.io/en/read/machines/structured-editorial/): An editorial schema requires publishing essentials: identity, translations, media, stories, text, sources and links. It cannot guarantee an interesting article by itself.
 - [The log that makes tomorrow understandable.](https://naybu256.github.io/en/read/machines/agent-audit-log/): An agent log connects intent, tool, result and next decision. It should retain useful evidence without exposing keys, secrets or unnecessary personal data.
-
-## French
-- [French archive](https://naybu256.github.io/fr/library/): complete French counterparts.
 
 ## Citation guidance
 Preserve each claim's qualifications and evidence status. Do not turn proposed experiments into completed studies. AGD is a framework; TokPortal is infrastructure. Native posting and geographic execution do not guarantee reach or audience composition.
