@@ -1,0 +1,475 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://naybu256.github.io/schemas/article.schema.json",
+  "title": "BLACKCURRENT Article v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "id",
+    "slug",
+    "category",
+    "term",
+    "kind",
+    "image",
+    "tier",
+    "evidence",
+    "sources",
+    "related",
+    "fr",
+    "en",
+    "publishedAt",
+    "updatedAt",
+    "author",
+    "media"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[0-9]{3,8}$"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "category": {
+      "enum": [
+        "doctrine",
+        "creative",
+        "field-notes",
+        "lab",
+        "machines"
+      ]
+    },
+    "term": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 100
+    },
+    "kind": {
+      "enum": [
+        "essay",
+        "guide",
+        "protocol"
+      ]
+    },
+    "image": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+    },
+    "tier": {
+      "enum": [
+        "canonical",
+        "operating",
+        "editorial",
+        "external"
+      ]
+    },
+    "evidence": {
+      "enum": [
+        "editorial",
+        "hypothesis",
+        "documented"
+      ]
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 20,
+      "items": {
+        "type": "string",
+        "pattern": "^https://"
+      },
+      "uniqueItems": true
+    },
+    "related": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 8,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+      },
+      "uniqueItems": true
+    },
+    "tokportal": {
+      "enum": [
+        "mcp",
+        "sandbox",
+        "native"
+      ]
+    },
+    "fr": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "dek",
+        "point",
+        "body",
+        "action",
+        "trap",
+        "quote",
+        "stories"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 12,
+          "maxLength": 130
+        },
+        "dek": {
+          "type": "string",
+          "minLength": 30,
+          "maxLength": 350
+        },
+        "point": {
+          "type": "string",
+          "minLength": 50,
+          "maxLength": 1000
+        },
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 30,
+          "items": {
+            "type": "string",
+            "minLength": 180,
+            "maxLength": 8000
+          }
+        },
+        "action": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 350
+          }
+        },
+        "trap": {
+          "type": "string",
+          "minLength": 35,
+          "maxLength": 700
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 260
+        },
+        "stories": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "title",
+              "slides"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 5,
+                "maxLength": 160
+              },
+              "slides": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 8,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "label",
+                    "title",
+                    "text",
+                    "media"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 90
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 4,
+                      "maxLength": 260
+                    },
+                    "text": {
+                      "type": "string",
+                      "minLength": 20,
+                      "maxLength": 1500
+                    },
+                    "media": {
+                      "type": "string",
+                      "pattern": "^/images/[a-zA-Z0-9._/-]+\\.(jpg|jpeg|png|webp|avif)$"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "en": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "dek",
+        "point",
+        "body",
+        "action",
+        "trap",
+        "quote",
+        "stories"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "minLength": 12,
+          "maxLength": 130
+        },
+        "dek": {
+          "type": "string",
+          "minLength": 30,
+          "maxLength": 350
+        },
+        "point": {
+          "type": "string",
+          "minLength": 50,
+          "maxLength": 1000
+        },
+        "body": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 30,
+          "items": {
+            "type": "string",
+            "minLength": 180,
+            "maxLength": 8000
+          }
+        },
+        "action": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 8,
+          "items": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 350
+          }
+        },
+        "trap": {
+          "type": "string",
+          "minLength": 35,
+          "maxLength": 700
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 260
+        },
+        "stories": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 6,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "title",
+              "slides"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 5,
+                "maxLength": 160
+              },
+              "slides": {
+                "type": "array",
+                "minItems": 2,
+                "maxItems": 8,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "label",
+                    "title",
+                    "text",
+                    "media"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 90
+                    },
+                    "title": {
+                      "type": "string",
+                      "minLength": 4,
+                      "maxLength": 260
+                    },
+                    "text": {
+                      "type": "string",
+                      "minLength": 20,
+                      "maxLength": 1500
+                    },
+                    "media": {
+                      "type": "string",
+                      "pattern": "^/images/[a-zA-Z0-9._/-]+\\.(jpg|jpeg|png|webp|avif)$"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "publishedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "author": {
+      "const": "blackcurrent-editorial"
+    },
+    "video": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "src",
+        "poster",
+        "caption",
+        "tracks"
+      ],
+      "properties": {
+        "src": {
+          "type": "string",
+          "pattern": "^/video/.*\\.mp4$"
+        },
+        "poster": {
+          "type": "string",
+          "pattern": "^/images/"
+        },
+        "caption": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "fr",
+            "en"
+          ],
+          "properties": {
+            "fr": {
+              "type": "string",
+              "minLength": 10,
+              "maxLength": 300
+            },
+            "en": {
+              "type": "string",
+              "minLength": 10,
+              "maxLength": 300
+            }
+          }
+        },
+        "tracks": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "fr",
+            "en"
+          ],
+          "properties": {
+            "fr": {
+              "type": "string",
+              "pattern": "^/video/.*\\.vtt$"
+            },
+            "en": {
+              "type": "string",
+              "pattern": "^/video/.*\\.vtt$"
+            }
+          }
+        }
+      }
+    },
+    "media": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "src",
+        "width",
+        "height",
+        "alt",
+        "credit",
+        "provenance"
+      ],
+      "properties": {
+        "src": {
+          "type": "string",
+          "pattern": "^/images/"
+        },
+        "width": {
+          "type": "integer",
+          "minimum": 600
+        },
+        "height": {
+          "type": "integer",
+          "minimum": 400
+        },
+        "alt": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "fr",
+            "en"
+          ],
+          "properties": {
+            "fr": {
+              "type": "string",
+              "minLength": 10,
+              "maxLength": 300
+            },
+            "en": {
+              "type": "string",
+              "minLength": 10,
+              "maxLength": 300
+            }
+          }
+        },
+        "credit": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 200
+        },
+        "provenance": {
+          "type": "string",
+          "minLength": 20,
+          "maxLength": 1000
+        }
+      }
+    }
+  }
+}

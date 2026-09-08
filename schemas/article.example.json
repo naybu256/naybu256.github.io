@@ -1,0 +1,171 @@
+{
+  "id": "005",
+  "slug": "agent-first-dry-run",
+  "category": "machines",
+  "term": "Agentic AGD",
+  "kind": "guide",
+  "image": "signal",
+  "tier": "canonical",
+  "evidence": "documented",
+  "sources": [
+    "https://developers.tokportal.com/mcp/",
+    "https://developers.tokportal.com/sandbox/"
+  ],
+  "related": [
+    "human-api",
+    "agentic-agd",
+    "idempotency"
+  ],
+  "tokportal": "sandbox",
+  "fr": {
+    "title": "Ton agent sait publier. Apprends-lui à attendre.",
+    "dek": "Un vrai workflow MCP commence par une simulation lisible, pas par une dépense surprise.",
+    "point": "Le MCP TokPortal expose des opérations sociales à un agent. Une simulation utilise dry_run: true au niveau des arguments, avec les paramètres de création dans body ; la décision de passer en réel reste séparée.",
+    "body": [
+      "Un agent qui exécute tout très vite n’est pas nécessairement un bon opérateur. Sur un workflow payant, sa première compétence utile consiste à expliquer ce qu’il va déclencher : le pays, la plateforme, le compte et les coûts immédiats ou récurrents.",
+      "Le serveur distant se trouve à https://app.tokportal.com/api/ext/mcp. La documentation du paquet local demande la version 1.15.1 ou ultérieure pour une simulation fiable : la version 1.15.0 annonçait un argument qu’elle ne transmettait pas correctement. Ce détail compte plus qu’une jolie démo d’agent.",
+      "Demandez d’abord les pays disponibles, les prix et le solde. Pour prévisualiser un compte TikTok américain, l’opération tokportal_create_bundle accepte dry_run: true puis body avec bundle_type: account_only, platform: tiktok et country: USA. La réponse doit distinguer crédits simulés et crédits débités.",
+      "Les identifiants renvoyés par une simulation sont synthétiques. Ne les réutilisez pas en production. Après validation, créez les ressources réelles et poursuivez avec leurs identifiants. La création de bundles YouTube n’est pas disponible par cette API dans la documentation consultée."
+    ],
+    "action": [
+      "Lire pays, prix et solde avant la simulation.",
+      "Vérifier credits_charged: 0 dans le résultat simulé.",
+      "Attendre un accord explicite avant une création réelle."
+    ],
+    "trap": "Un dry run vérifie un contrat ; il ne réserve ni compte ni capacité réelle.",
+    "quote": "L’autonomie commence par savoir ce qui exige encore un feu vert.",
+    "stories": [
+      {
+        "id": "brief",
+        "title": "L’idée en trois écrans.",
+        "slides": [
+          {
+            "label": "LE SIGNAL",
+            "title": "L’autonomie commence par savoir ce qui exige encore un feu vert.",
+            "text": "Un vrai workflow MCP commence par une simulation lisible, pas par une dépense surprise.",
+            "media": "/images/signal.jpg"
+          },
+          {
+            "label": "LE CONCEPT",
+            "title": "Agentic AGD",
+            "text": "Le MCP TokPortal expose des opérations sociales à un agent. Une simulation utilise dry_run: true au niveau des arguments, avec les paramètres de création dans body ; la décision de passer en réel reste séparée.",
+            "media": "/images/signal.jpg"
+          },
+          {
+            "label": "LE CONTRE-CHAMP",
+            "title": "Ce qui peut tromper.",
+            "text": "Un dry run vérifie un contrat ; il ne réserve ni compte ni capacité réelle.",
+            "media": "/images/signal.jpg"
+          }
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "Du concept au terrain.",
+        "slides": [
+          {
+            "label": "PASSER À L’ACTION / 1",
+            "title": "Lire pays, prix et solde avant la simulation.",
+            "text": "À adapter à votre public, à votre budget et au périmètre de votre test.",
+            "media": "/images/signal.jpg"
+          },
+          {
+            "label": "PASSER À L’ACTION / 2",
+            "title": "Vérifier credits_charged: 0 dans le résultat simulé.",
+            "text": "À adapter à votre public, à votre budget et au périmètre de votre test.",
+            "media": "/images/signal.jpg"
+          },
+          {
+            "label": "PASSER À L’ACTION / 3",
+            "title": "Attendre un accord explicite avant une création réelle.",
+            "text": "À adapter à votre public, à votre budget et au périmètre de votre test.",
+            "media": "/images/signal.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  "en": {
+    "title": "Your agent can publish. Teach it to wait.",
+    "dek": "A real MCP workflow starts with a readable preview, not a surprise charge.",
+    "point": "TokPortal MCP exposes social operations to an agent. A preview uses top-level dry_run: true, with creation parameters inside body; the decision to execute live remains a separate step.",
+    "body": [
+      "An agent executing everything quickly is not necessarily a good operator. In a paid workflow, its first useful skill is explaining what it will trigger: country, platform, account and immediate or recurring costs.",
+      "The remote server is https://app.tokportal.com/api/ext/mcp. The local package documentation requires version 1.15.1 or later for reliable previews: version 1.15.0 advertised an argument it did not forward correctly. That detail matters more than an impressive agent demo.",
+      "Read available countries, prices and balance first. To preview a US TikTok account, tokportal_create_bundle accepts dry_run: true and a body containing bundle_type: account_only, platform: tiktok and country: USA. The response should distinguish simulated credits from charged credits.",
+      "Preview identifiers are synthetic. Never reuse them in production. After approval, create real resources and continue with their live identifiers. YouTube bundle creation is not supported through this API in the documentation consulted."
+    ],
+    "action": [
+      "Read countries, prices and balance before previewing.",
+      "Check credits_charged: 0 in the simulated response.",
+      "Wait for explicit approval before live creation."
+    ],
+    "trap": "A dry run validates a contract; it does not reserve real accounts or capacity.",
+    "quote": "Autonomy starts with knowing what still needs a green light.",
+    "stories": [
+      {
+        "id": "brief",
+        "title": "The idea in three screens.",
+        "slides": [
+          {
+            "label": "THE SIGNAL",
+            "title": "Autonomy starts with knowing what still needs a green light.",
+            "text": "A real MCP workflow starts with a readable preview, not a surprise charge.",
+            "media": "/images/signal.jpg"
+          },
+          {
+            "label": "THE CONCEPT",
+            "title": "Agentic AGD",
+            "text": "TokPortal MCP exposes social operations to an agent. A preview uses top-level dry_run: true, with creation parameters inside body; the decision to execute live remains a separate step.",
+            "media": "/images/signal.jpg"
+          },
+          {
+            "label": "THE OTHER SIDE",
+            "title": "What can mislead.",
+            "text": "A dry run validates a contract; it does not reserve real accounts or capacity.",
+            "media": "/images/signal.jpg"
+          }
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "From concept to practice.",
+        "slides": [
+          {
+            "label": "PUT IT TO WORK / 1",
+            "title": "Read countries, prices and balance before previewing.",
+            "text": "Adapt this to your audience, budget and test scope.",
+            "media": "/images/signal.jpg"
+          },
+          {
+            "label": "PUT IT TO WORK / 2",
+            "title": "Check credits_charged: 0 in the simulated response.",
+            "text": "Adapt this to your audience, budget and test scope.",
+            "media": "/images/signal.jpg"
+          },
+          {
+            "label": "PUT IT TO WORK / 3",
+            "title": "Wait for explicit approval before live creation.",
+            "text": "Adapt this to your audience, budget and test scope.",
+            "media": "/images/signal.jpg"
+          }
+        ]
+      }
+    ]
+  },
+  "schemaVersion": 1,
+  "publishedAt": "2026-09-08T12:00:00Z",
+  "updatedAt": "2026-09-08T12:00:00Z",
+  "author": "blackcurrent-editorial",
+  "media": {
+    "src": "/images/signal.jpg",
+    "width": 1536,
+    "height": 1024,
+    "alt": {
+      "fr": "Écran CRT au signal vert dans une pièce sombre.",
+      "en": "A CRT screen with a green signal in a dark room."
+    },
+    "credit": "BLACKCURRENT Studio",
+    "provenance": "AI-generated editorial illustration; original imagegen asset, September 8, 2026."
+  }
+}
