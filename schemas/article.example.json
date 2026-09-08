@@ -85,10 +85,44 @@
       }
     ]
   },
-  "schemaVersion": 1,
+  "schemaVersion": 2,
+  "deepDive": {
+    "heading": "Make the preview a contract a person can inspect.",
+    "paragraphs": [
+      "A dry run earns its name when the reviewer can explain what will happen next without reading the agent’s optimistic narration. For a publishing job, that means the intended account, asset version, caption, time window, cost scope and the action that would cross into real execution. A preview that returns a plausible success message but hides these choices has only moved uncertainty into a nicer interface. Give the reviewer a concrete difference between the current state and the proposed state.",
+      "For TokPortal, keep the distinction between a simulated response and a live resource explicit. A synthetic identifier returned by a preview is not something to reuse as if it had been created in production. Before executing a reviewed plan, check current tool documentation and required inputs again, especially when the preview was produced earlier or by another agent. Store the approval against the actual plan revision. If the caption, account or price-sensitive scope changes, the old approval should not silently travel with it. Autonomy becomes useful when the boundary is specific enough to audit.",
+      "Treat the preview as a small production meeting with a written agenda. The operator should be able to identify the account or bundle being requested, the country, the quantity, the expected cost and the fact that the operation is still simulated. If the response contains simulated identifiers, keep them out of later live calls. Store the preview beside the proposed inputs, then make any change visible before execution. A dry-run result that nobody reads is only an extra request in the log.",
+      "The example payload below is intentionally narrow. It demonstrates the shape of a documented preview request, not a complete autonomous acquisition system. A real workflow must still check current tool capabilities, authorisation, cost and the final live result. If the service returns an uncertain state, reconcile it before retrying. Keep an explicit distinction between prepared, approved, executed and verified. Those states make it possible to give an assistant useful autonomy without treating every fluent completion message as proof that the underlying operation succeeded. The objective is a concrete action a person can understand before it has consequences."
+    ],
+    "diagram": {
+      "kind": "flow",
+      "title": "A reviewable execution boundary",
+      "items": [
+        {
+          "label": "Propose",
+          "detail": "Show the exact account, asset and intended action.",
+          "value": 0
+        },
+        {
+          "label": "Inspect",
+          "detail": "Review scope, current capabilities and costs.",
+          "value": 0
+        },
+        {
+          "label": "Execute",
+          "detail": "Use live inputs only after the specific plan is accepted.",
+          "value": 0
+        }
+      ],
+      "caption": "Editorial model: a way to reason about the process, not measured platform results."
+    },
+    "caseLens": "Treat this public post as the final object a publishing workflow would have to reproduce accurately. The video does not expose the system behind it. The useful exercise is to specify the checks your own agent would need before publishing a comparable asset.",
+    "caseIds": []
+  },
+  "examples": [],
   "publishedAt": "2026-09-08T12:00:00Z",
-  "updatedAt": "2026-09-08T17:06:44.287Z",
-  "author": "feedraid-editorial",
+  "updatedAt": "2026-09-08T17:45:45.218Z",
+  "author": "organic-club-editorial",
   "media": {
     "kind": "photograph",
     "src": "/images/editorial/agent-first-dry-run.jpg",

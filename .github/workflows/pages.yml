@@ -1,4 +1,4 @@
-name: Publish FEEDRAID
+name: Publish The Organic Club
 on:
   push:
     branches: [main]
@@ -7,7 +7,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: feedraid-production
+  group: organic-club-production
   cancel-in-progress: false
 jobs:
   publish:
