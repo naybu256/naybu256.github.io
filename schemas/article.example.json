@@ -18,7 +18,7 @@
   ],
   "tokportal": "sandbox",
   "en": {
-    "title": "Your agent can publish. Teach it to wait.",
+    "title": "TokPortal MCP Tutorial: Preview an AI Workflow with Dry Run",
     "dek": "A real MCP workflow starts with a readable preview, not a surprise charge.",
     "point": "TokPortal MCP exposes social operations to an agent. A preview uses top-level dry_run: true, with creation parameters inside body; the decision to execute live remains a separate step.",
     "body": [
@@ -85,6 +85,79 @@
       }
     ]
   },
+  "workshops": [
+    {
+      "id": "connect",
+      "title": "Connect an AI assistant to the actual TokPortal tools",
+      "intro": "The remote MCP address is the entry point for an assistant. The screenshot shows TokPortal’s real connection screen, including the authorisation step. Your API key does not belong in an editorial prompt.",
+      "endpoint": "https://app.tokportal.com/api/ext/mcp",
+      "code": "Inspect my existing TikTok accounts and the current credit rules.\nPrepare three distinct creative angles for a US audience.\nFor each, identify the account, required media and a valid publishing window.\nPreview any proposed creation with dry_run: true.\nReport credits_would_charge, recurring Coverage and missing inputs.\nDo not create or publish a live task.",
+      "language": "text",
+      "explain": "Copy this as a planning brief after connecting your assistant. It asks for a concrete preview, not a pretend transcript of successful execution. Remote MCP supports the documented dry-run workflow; local tokportal-mcp needs version 1.15.1 or later.",
+      "checks": [
+        {
+          "label": "Read-only first",
+          "detail": "Choose read-only access when the job is inventory or analysis. Publishing requires an appropriately authorised connection."
+        },
+        {
+          "label": "Discover current tools",
+          "detail": "Use the tool catalogue available in the connected workspace instead of assuming a capability from a marketing page."
+        },
+        {
+          "label": "Review before execution",
+          "detail": "Check destination, assets, price and review windows against the actual tool response."
+        }
+      ],
+      "sources": [
+        "https://developers.tokportal.com/mcp/"
+      ],
+      "checkedAt": "2026-09-09T00:00:00Z",
+      "capture": {
+        "src": "/images/tokportal/tokportal-mcp-connect.png",
+        "width": 930,
+        "height": 250,
+        "alt": "TokPortal connection screen with the remote MCP URL and Claude connection steps.",
+        "caption": "Actual TokPortal MCP connection screen, captured 8 September 2026.",
+        "source": "https://app.tokportal.com/developer/connect-ai"
+      }
+    },
+    {
+      "id": "preview",
+      "title": "Preview three TikTok uploads before committing credits",
+      "intro": "The builder makes the operational choices visible: a new account, its country and the number of uploads. The MCP request below expresses those same choices as a simulation.",
+      "endpoint": "POST /api/ext/bundles",
+      "code": "{\n  \"tool\": \"tokportal_create_bundle\",\n  \"arguments\": {\n    \"dry_run\": true,\n    \"body\": {\n      \"bundle_type\": \"account_and_videos\",\n      \"platform\": \"tiktok\",\n      \"country\": \"USA\",\n      \"videos_quantity\": 3,\n      \"edits_quantity\": 0,\n      \"wants_advanced_warming\": false,\n      \"auto_finalize_videos\": false\n    }\n  }\n}",
+      "language": "json",
+      "explain": "This is a sample request, not an executed order or a price quote. In REST, the equivalent simulation uses X-TokPortal-Dry-Run: true. Live creation debits credits immediately; the preview is the place to inspect the actual workspace-specific price.",
+      "checks": [
+        {
+          "label": "Read the quote",
+          "detail": "Inspect credits_would_charge and recurring Coverage. A dry run reports credits_charged as 0."
+        },
+        {
+          "label": "Keep simulation separate",
+          "detail": "Returned simulation IDs are synthetic and cannot be reused in live requests. The simulation does not retain cross-call objects."
+        },
+        {
+          "label": "Review the package",
+          "detail": "auto_finalize_videos is explicitly false here. Check the current review-window rules before any live execution."
+        }
+      ],
+      "sources": [
+        "https://developers.tokportal.com/sandbox/",
+        "https://developers.tokportal.com/mcp/"
+      ],
+      "checkedAt": "2026-09-09T00:00:00Z",
+      "capture": {
+        "src": "/images/tokportal/tokportal-bundle-builder.png",
+        "width": 731,
+        "height": 655,
+        "alt": "TokPortal bundle builder showing platform and account-plus-video choices.",
+        "caption": "Actual TokPortal builder, captured 8 September 2026.",
+        "source": "https://app.tokportal.com/bundles/create"
+      }
+    }
+  ],
   "schemaVersion": 2,
   "deepDive": {
     "heading": "Make the preview a contract a person can inspect.",
@@ -121,8 +194,8 @@
   },
   "examples": [],
   "publishedAt": "2026-09-08T12:00:00Z",
-  "updatedAt": "2026-09-08T17:45:45.218Z",
-  "author": "organic-club-editorial",
+  "updatedAt": "2026-09-09T07:41:56.167Z",
+  "author": "jet",
   "media": {
     "kind": "photograph",
     "src": "/images/editorial/agent-first-dry-run.jpg",
