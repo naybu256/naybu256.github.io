@@ -211,8 +211,6 @@
   [Plain-text edition](https://theorganiclub.com/en/read/machines/structured-editorial/article.md)
 - [AI Agent Audit Logs: Trace Marketing Actions and Decisions](https://theorganiclub.com/en/read/machines/agent-audit-log/): An agent log connects intent, tool, result and next decision. It should retain useful evidence without exposing keys, secrets or unnecessary personal data.
   [Plain-text edition](https://theorganiclub.com/en/read/machines/agent-audit-log/article.md)
-- [How should you approve one delivered-account video slot after a dry run?](https://theorganiclub.com/en/read/machines/delivered-account-slot-approval-checklist/): On a delivered account, a dry run helps answer whether one exact slot configuration is structurally valid now. It does not answer whether the creative is good, whether the post should ship, or whether future publication will succeed.
-  [Plain-text edition](https://theorganiclub.com/en/read/machines/delivered-account-slot-approval-checklist/article.md)
 
 ## Evidence and citation
 Use the canonical article URL when citing. Preserve qualifications, source dates and the distinction between observation and interpretation. The markdown edition contains the same editorial material and its source links. Native posting, geographic execution and this publication do not guarantee reach, sales or search visibility.
