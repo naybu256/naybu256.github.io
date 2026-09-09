@@ -3,7 +3,7 @@
 Canonical: https://theorganiclub.com/en/read/lab/native-vs-api/
 
 Published: 2026-09-08T12:00:00Z
-Updated: 2026-09-09T11:36:20.269641Z
+Updated: 2026-09-09T11:43:29.854908Z
 Language: en
 Evidence: hypothesis
 
@@ -100,7 +100,7 @@ Replace the marked values with an authorized real bundle, a media URL you contro
 
 - **Use a valid window:** Allow at least three days while account creation is pending, or one day for delivered/existing accounts. Check the current response and limits.
 
-- **Inspect readiness:** GET /api/ext/bundles/{id}/publish-readiness lists blockers without a debit or mutation. Review ignored_fields and the returned start/end dates.
+- **Read the preview result:** Check the simulation markers and date validation. If INVALID_DATE includes details.earliest_allowed, use that returned limit to revise the proposed date. Never copy preview IDs into live requests.
 
 ## Put it to work
 
