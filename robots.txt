@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://naybu256.github.io/sitemap.xml
+Sitemap: https://theorganiclub.com/sitemap.xml

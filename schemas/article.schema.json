@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://naybu256.github.io/schemas/article.schema.json",
+  "$id": "https://theorganiclub.com/schemas/article.schema.json",
   "title": "THE ORGANIC CLUB Article v2",
   "type": "object",
   "additionalProperties": false,
