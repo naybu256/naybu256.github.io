@@ -3,7 +3,7 @@
 Canonical: https://theorganiclub.com/en/read/machines/agent-first-dry-run/
 
 Published: 2026-09-08T12:00:00Z
-Updated: 2026-09-09T07:41:56.167Z
+Updated: 2026-09-09T11:30:08.839243Z
 Language: en
 Evidence: documented
 
@@ -92,9 +92,9 @@ Copy this as a planning brief after connecting your assistant. It asks for a con
 
 - **Review before execution:** Check destination, assets, price and review windows against the actual tool response.
 
-## TokPortal workflow: Preview three TikTok uploads before committing credits
+## TokPortal workflow: Preview an account with three video slots before committing credits
 
-The builder makes the operational choices visible: a new account, its country and the number of uploads. The MCP request below expresses those same choices as a simulation.
+The archived builder shows account and video-package choices. This sample MCP request previews a package with one account and three video slots; it does not upload three video files.
 
 Endpoint: POST /api/ext/bundles
 
@@ -118,7 +118,7 @@ Endpoint: POST /api/ext/bundles
 
 This is a sample request, not an executed order or a price quote. In REST, the equivalent simulation uses X-TokPortal-Dry-Run: true. Live creation debits credits immediately; the preview is the place to inspect the actual workspace-specific price.
 
-- **Read the quote:** Inspect credits_would_charge and recurring Coverage. A dry run reports credits_charged as 0.
+- **Read the quote:** Read the quoted credit fields and cost_breakdown returned by the current contract. A simulation does not debit the live balance.
 
 - **Keep simulation separate:** Returned simulation IDs are synthetic and cannot be reused in live requests. The simulation does not retain cross-call objects.
 
