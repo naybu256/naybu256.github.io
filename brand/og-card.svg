@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0c0e0c"/>
+  <path d="M64 104h1072M64 474h1072" stroke="#414738"/>
+  <g fill="#a8b099" font-family="monospace" font-size="18" letter-spacing="3">
+    <text x="64" y="68">INDEPENDENT IDEAS</text><text x="916" y="68">EST. 2026</text>
+  </g>
+  <text x="66" y="155" fill="#dbff73" font-family="Arial,Helvetica,sans-serif" font-size="23" font-weight="900" letter-spacing="6">THE</text>
+  <g fill="#eef1e9" font-family="Arial,Helvetica,sans-serif" font-weight="900">
+    <text x="57" y="282" font-size="133" letter-spacing="-8">ORGANIC</text>
+    <text x="58" y="424" font-size="150" letter-spacing="22">CLUB</text>
+  </g>
+  <circle cx="987" cy="293" r="130" fill="none" stroke="#414738"/>
+  <circle cx="987" cy="293" r="149" fill="none" stroke="#252b20"/>
+  <g stroke="#dbff73" stroke-width="17" transform="translate(987 293)">
+    <path d="M-98 0h196M0-98v196M-70-70l140 140M-70 70L70-70"/>
+  </g>
+  <text x="64" y="529" fill="#dbff73" font-family="Arial,Helvetica,sans-serif" font-size="30" font-weight="700">Accounts. Culture. Distribution.</text>
+  <g fill="#a8b099" font-family="monospace" font-size="16" letter-spacing="1">
+    <text x="64" y="583">THE AGD &amp; GROWTH MEDIA</text><text x="897" y="583">theorganiclub.com</text>
+  </g>
+</svg>
