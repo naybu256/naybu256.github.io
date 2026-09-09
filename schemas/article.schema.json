@@ -346,6 +346,115 @@
               "pattern": "^https://"
             }
           },
+          "breakdown": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "format",
+              "audience",
+              "productRole",
+              "beats",
+              "transfer"
+            ],
+            "properties": {
+              "format": {
+                "type": "string",
+                "minLength": 5,
+                "maxLength": 150
+              },
+              "audience": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 350
+              },
+              "productRole": {
+                "type": "string",
+                "minLength": 20,
+                "maxLength": 400
+              },
+              "beats": {
+                "type": "array",
+                "minItems": 3,
+                "maxItems": 5,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "label",
+                    "observed",
+                    "reading"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string",
+                      "minLength": 5,
+                      "maxLength": 100
+                    },
+                    "observed": {
+                      "type": "string",
+                      "minLength": 20,
+                      "maxLength": 500
+                    },
+                    "reading": {
+                      "type": "string",
+                      "minLength": 30,
+                      "maxLength": 800
+                    }
+                  }
+                }
+              },
+              "transfer": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "title",
+                  "scenario",
+                  "hook",
+                  "visual",
+                  "keep",
+                  "change",
+                  "measure"
+                ],
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "minLength": 10,
+                    "maxLength": 150
+                  },
+                  "scenario": {
+                    "type": "string",
+                    "minLength": 15,
+                    "maxLength": 250
+                  },
+                  "hook": {
+                    "type": "string",
+                    "minLength": 10,
+                    "maxLength": 300
+                  },
+                  "visual": {
+                    "type": "string",
+                    "minLength": 30,
+                    "maxLength": 1200
+                  },
+                  "keep": {
+                    "type": "string",
+                    "minLength": 20,
+                    "maxLength": 500
+                  },
+                  "change": {
+                    "type": "string",
+                    "minLength": 20,
+                    "maxLength": 500
+                  },
+                  "measure": {
+                    "type": "string",
+                    "minLength": 30,
+                    "maxLength": 800
+                  }
+                }
+              }
+            }
+          },
           "screenshot": {
             "type": "object",
             "additionalProperties": false,
@@ -372,6 +481,38 @@
               "capturedAt": {
                 "type": "string",
                 "format": "date-time"
+              },
+              "crop": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "x",
+                  "y",
+                  "width",
+                  "height"
+                ],
+                "properties": {
+                  "x": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 1279
+                  },
+                  "y": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 719
+                  },
+                  "width": {
+                    "type": "integer",
+                    "minimum": 100,
+                    "maximum": 1280
+                  },
+                  "height": {
+                    "type": "integer",
+                    "minimum": 100,
+                    "maximum": 720
+                  }
+                }
               }
             }
           },
@@ -405,6 +546,38 @@
                 "capturedAt": {
                   "type": "string",
                   "format": "date-time"
+                },
+                "crop": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "x",
+                    "y",
+                    "width",
+                    "height"
+                  ],
+                  "properties": {
+                    "x": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 1279
+                    },
+                    "y": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 719
+                    },
+                    "width": {
+                      "type": "integer",
+                      "minimum": 100,
+                      "maximum": 1280
+                    },
+                    "height": {
+                      "type": "integer",
+                      "minimum": 100,
+                      "maximum": 720
+                    }
+                  }
                 }
               }
             }
