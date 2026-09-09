@@ -3,7 +3,7 @@
 Canonical: https://theorganiclub.com/en/read/field-notes/us-launch/
 
 Published: 2026-09-08T12:00:00Z
-Updated: 2026-09-09T11:30:08.839243Z
+Updated: 2026-09-09T11:36:20.269641Z
 Language: en
 Evidence: editorial
 
@@ -92,7 +92,7 @@ This is a sample request, not an executed order or a price quote. In REST, the e
 
 ## TokPortal workflow: Prepare the actual video slot, not just the caption
 
-TokPortal’s editor distinguishes Video, Carousel and Story, and asks for a target publishing period. The API follows the same operational idea: the content needs a valid format, accessible media and a usable window.
+In the archived editor capture, the interface shows Video, Carousel and Story options, plus a target publishing period. The API example below is a separate documented slot-configuration preview; the screenshot alone does not establish the API contract.
 
 Endpoint: PUT /api/ext/bundles/{id}/videos/{position}
 
@@ -106,13 +106,16 @@ Endpoint: PUT /api/ext/bundles/{id}/videos/{position}
       "video_type": "video",
       "video_url": "<public_url returned by your video upload>",
       "description": "A practical example of organising freelance subscriptions.",
-      "target_publish_date": "<valid future date: YYYY-MM-DD>"
-    }
+      "target_publish_date": "<valid future date: YYYY-MM-DD>",
+      "ai_content_disclaimer": false,
+      "auto_publish": false
+    },
+    "dry_run": true
   }
 }
 ```
 
-Replace the marked values with your actual upload and bundle. This template is intentionally not a runnable campaign. target_publish_date starts a two-day publishing window; it does not request an exact minute.
+Replace the marked values with an authorized real bundle, a media URL you control and a valid future date. This is a dry-run template, not an executed campaign. The archived UI shows a two-day period for that captured example; use the current API validation response to determine the dates accepted for your own request.
 
 - **Choose the correct media fields:** A video needs video_url and description. A TikTok carousel instead needs carousel_images and tiktok_sound_url.
 
@@ -133,5 +136,7 @@ Limit: A US audience alone is not evidence of paying demand.
 - https://developers.tokportal.com/sandbox/
 
 - https://developers.tokportal.com/mcp/
+
+- https://developers.tokportal.com/use-cases/no-code/mp4-delivered-account-preview/
 
 This publication is initiated by TokPortal. AI-assisted editorial production and corrections policy: https://theorganiclub.com/en/about/
