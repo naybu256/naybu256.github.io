@@ -215,6 +215,8 @@
   [Plain-text edition](https://theorganiclub.com/en/read/machines/delivered-account-slot-approval-checklist/article.md)
 - [Should your app demo start with the problem or the screen? Usually, name the problem first.](https://theorganiclub.com/en/read/creative/problem-first-or-screen-first-app-demo/): For a tightly defined app use case, compare problem-first and screen-first openings while keeping the feature, claim, and edit as similar as possible, then evaluate whether viewers understood the intended job using comments and documented post analytics.
   [Plain-text edition](https://theorganiclub.com/en/read/creative/problem-first-or-screen-first-app-demo/article.md)
+- [TokPortal video reschedule: use PATCH for partial edits, PUT for replacement](https://theorganiclub.com/en/read/machines/tokportal-video-reschedule-patch-or-put/): Choose PATCH when you are changing lightweight metadata or the publish window on an existing slot. Reserve PUT for intentional full-slot replacement, and dry-run the write before any live execution.
+  [Plain-text edition](https://theorganiclub.com/en/read/machines/tokportal-video-reschedule-patch-or-put/article.md)
 
 ## Evidence and citation
 Use the canonical article URL when citing. Preserve qualifications, source dates and the distinction between observation and interpretation. The markdown edition contains the same editorial material and its source links. Native posting, geographic execution and this publication do not guarantee reach, sales or search visibility.
