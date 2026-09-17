@@ -217,6 +217,8 @@
   [Plain-text edition](https://theorganiclub.com/en/read/creative/problem-first-or-screen-first-app-demo/article.md)
 - [TokPortal video reschedule: use PATCH for partial edits, PUT for replacement](https://theorganiclub.com/en/read/machines/tokportal-video-reschedule-patch-or-put/): Choose PATCH when you are changing lightweight metadata or the publish window on an existing slot. Reserve PUT for intentional full-slot replacement, and dry-run the write before any live execution.
   [Plain-text edition](https://theorganiclub.com/en/read/machines/tokportal-video-reschedule-patch-or-put/article.md)
+- [After the problem hook, should an app demo show the result glimpse early? Usually, yes.](https://theorganiclub.com/en/read/creative/result-glimpse-after-problem-app-demo/): For TikTok search-intent app demos, a practical default is problem → result glimpse → minimum steps → inspectable return.
+  [Plain-text edition](https://theorganiclub.com/en/read/creative/result-glimpse-after-problem-app-demo/article.md)
 
 ## Evidence and citation
 Use the canonical article URL when citing. Preserve qualifications, source dates and the distinction between observation and interpretation. The markdown edition contains the same editorial material and its source links. Native posting, geographic execution and this publication do not guarantee reach, sales or search visibility.
